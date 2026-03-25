@@ -44,11 +44,11 @@ AI 스마트 디퓨저 스타트업 **Twelve Senses**의 주간 분석 보고서
 앞 단계의 결과가 뒷 단계의 인풋으로 사용됩니다.
 
 ```
-_리서치 → 시장조사 ┐
-         PEST분석   ├─→ SWOT분석 → 전략기획 ┐
-         고객경쟁사분석 ┘               제품기획 ├─→ UI기획 ┐
-                                                디자인   ├─→ 마케팅전략
-                                                브랜딩전략 ┘
+_Research → Market Analysis ┐
+            PEST Analysis   ├─→ SWOT → Strategic Plan ┐
+            3C Analysis     ┘          Product Plan   ├─→ UI Plan      ┐
+                                                         Design Plan   ├─→ Marketing Plan
+                                                         Branding Plan ┘
 ```
 
 ### 각 리포트 설명
