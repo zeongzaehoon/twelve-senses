@@ -6,7 +6,8 @@ AI 스마트 디퓨저 스타트업 **Twelve Senses**의 주간 분석 보고서
 ---
 
 ## 리포트 뷰어 실행
-![image](./image/example.png)
+![다크모드](./image/example.png)
+![라이트모드](./image/example2.png)
 
 ### 시작
 

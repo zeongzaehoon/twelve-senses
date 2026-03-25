@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Insights Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#060e20",
+              "on-secondary-container": "#c6d1e3",
+              "inverse-on-surface": "#4d556b",
+              "on-secondary-fixed": "#333e4d",
+              "on-tertiary-container": "#611670",
+              "tertiary-container": "#f59fff",
+              "primary-dim": "#659dff",
+              "error-dim": "#d7383b",
+              "on-secondary-fixed-variant": "#505b6a",
+              "error": "#ff716c",
+              "secondary-fixed-dim": "#c7d2e4",
+              "surface-container-highest": "#192540",
+              "primary-container": "#6aa0ff",
+              "secondary-container": "#3d4856",
+              "secondary-dim": "#c7d2e4",
+              "surface-tint": "#83aeff",
+              "inverse-primary": "#005cbf",
+              "on-surface": "#dee5ff",
+              "on-primary": "#002d63",
+              "outline": "#6d758c",
+              "surface-dim": "#060e20",
+              "on-error": "#490006",
+              "primary-fixed-dim": "#4e92ff",
+              "surface-bright": "#1f2b49",
+              "tertiary": "#f9b5ff",
+              "on-tertiary-fixed-variant": "#6c217a",
+              "on-primary-fixed-variant": "#002b5f",
+              "on-tertiary": "#6c227a",
+              "tertiary-dim": "#e692f1",
+              "on-tertiary-fixed": "#450052",
+              "surface-container": "#0f1930",
+              "on-primary-fixed": "#000000",
+              "surface-container-low": "#091328",
+              "secondary-fixed": "#d5e0f3",
+              "outline-variant": "#40485d",
+              "inverse-surface": "#faf8ff",
+              "on-primary-container": "#00214d",
+              "surface-container-high": "#141f38",
+              "surface": "#060e20",
+              "surface-variant": "#192540",
+              "primary-fixed": "#6aa0ff",
+              "on-error-container": "#ffa8a3",
+              "primary": "#83aeff",
+              "tertiary-fixed": "#f59fff",
+              "on-secondary": "#465160",
+              "secondary": "#d5e0f3",
+              "on-background": "#dee5ff",
+              "on-surface-variant": "#a3aac4",
+              "surface-container-lowest": "#000000",
+              "tertiary-fixed-dim": "#e692f1",
+              "error-container": "#9f0519"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #060e20;
+      }
+      .glass-card {
+        background: rgba(15, 25, 48, 0.4);
+        backdrop-filter: blur(24px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .text-glow {
+        text-shadow: 0 0 15px rgba(131, 174, 255, 0.4);
+      }
+    </style>
+</head>
+<body class="text-on-surface antialiased overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full shadow-xl shadow-blue-500/5">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-white tracking-tight">Digital Insights</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-blue-400 font-semibold text-sm transition-colors" href="#">Dashboard</a>
+<a class="text-slate-400 hover:bg-slate-800/50 transition-colors px-3 py-1 rounded-full text-sm" href="#">Market</a>
+<a class="text-slate-400 hover:bg-slate-800/50 transition-colors px-3 py-1 rounded-full text-sm" href="#">Portfolio</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-slate-800/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-slate-800/50 rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-bright overflow-hidden ring-2 ring-primary/20">
+<img alt="User profile" class="h-full w-full object-cover" data-alt="close up headshot of a professional young woman with a friendly smile, clean studio lighting, high resolution portrait style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5YcGyJIH8FAS0xoYdTQyEJm_hwEc4v-BqfGMDIzHOU_SqbixnekEtjreYzco6UtwnyFEu675-8lWCV56PjRugqARsF-uwWWXFc3VooR7EDn8RBLIne_2gIQCOyayF5seJb-Q_3ZIQf00VpwfrE6dlpxyrKZeYOrjcjbzn5CBawuPuJM8lY5kI6DrmjKP5vIh28pH3Ux5-dOLsRLy8bXIjGqQhBQP_8K_tkQDJc87tSAjFxYHddBAblfq1ewcpiutN6dB2I32G3aa7"/>
+</div>
+</div>
+</nav>
+<!-- Side Navigation Shell (Desktop) -->
+<aside class="hidden md:flex fixed left-0 top-0 h-[calc(100vh-2rem)] w-64 m-4 mt-20 rounded-3xl bg-slate-900/40 backdrop-blur-2xl flex-col p-4 shadow-2xl shadow-black/20 space-y-2 z-40">
+<div class="px-4 py-6 mb-2">
+<h2 class="text-lg font-black text-white">Toss Insights</h2>
+<p class="text-xs text-on-surface-variant font-medium opacity-60">Premium Analytics</p>
+</div>
+<nav class="space-y-1">
+<a class="bg-blue-600/20 text-blue-400 rounded-2xl flex items-center px-4 py-3 gap-3 transition-transform active:scale-98" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a class="text-slate-400 flex items-center px-4 py-3 gap-3 hover:bg-slate-800/60 rounded-2xl transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium text-sm">Reports</span>
+</a>
+<a class="text-slate-400 flex items-center px-4 py-3 gap-3 hover:bg-slate-800/60 rounded-2xl transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">insert_chart</span>
+<span class="font-medium text-sm">Analytics</span>
+</a>
+<a class="text-slate-400 flex items-center px-4 py-3 gap-3 hover:bg-slate-800/60 rounded-2xl transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-medium text-sm">Assets</span>
+</a>
+<a class="text-slate-400 flex items-center px-4 py-3 gap-3 hover:bg-slate-800/60 rounded-2xl transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-medium text-sm">Support</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-primary/10 rounded-2xl">
+<p class="text-xs text-primary font-bold mb-2">Upgrade Pro</p>
+<p class="text-[10px] text-on-surface-variant mb-4 leading-relaxed">Get unlimited AI reports and deep analytics.</p>
+<button class="w-full bg-primary text-on-primary py-2 rounded-full text-xs font-bold hover:brightness-110 transition-all">Upgrade Now</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="pt-24 pb-12 px-6 md:pl-80 max-w-[1600px] mx-auto min-h-screen">
+<!-- Welcome Header -->
+<header class="mb-10">
+<h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-2">Weekly Digest</h1>
+<p class="text-on-surface-variant text-lg">Your market intelligence for the week of Oct 24.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+<!-- Summary Feature Card -->
+<div class="md:col-span-8 glass-card rounded-xl p-8 relative overflow-hidden group">
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-12">
+<div class="bg-primary/20 text-primary-fixed px-4 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                            AI SUMMARY
+                        </div>
+<span class="text-on-surface-variant text-sm font-medium">Updated 2h ago</span>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4 leading-snug">The ecosystem is showing signs of strong recovery in deep-tech sectors.</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-xl">
+                        Venture capital inflows have increased by 22% compared to last quarter, specifically targeting sustainable infrastructure and automated logic processing units.
+                    </p>
+<div class="mt-auto pt-8 flex gap-4">
+<button class="bg-primary text-on-primary-container px-8 py-3 rounded-full font-bold flex items-center gap-2 hover:shadow-lg hover:shadow-primary/20 transition-all">
+                            Full Analysis
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Decorative background image -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-30 pointer-events-none">
+<img alt="Decorative background" class="h-full w-full object-cover" data-alt="abstract flowing blue liquid waves with glowing particles and soft bokeh, high-tech aesthetic, dark blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2LfcPR4u4HAiEPhnuNxqy_I54MPbb82d8zGCBKv9Q3_gf3vv3m-0POksJ0uzB1kQGSdkMs8BkI0RbcL0gstOdxMfp3gElR4NAImwsvFZkBJAjayvxmLEWbYgSq9YIr8huU4PAmVh31n6MDthDfsbAgJKSTlTir42cL6wAAqDzc_fDsEsrtSkybhn5foCRZA-qkgMwaX6PjHVRhZ4iFLo__0GFi8d-0b7HqjtQtiJGQHjKXcDjUma2xWCE5mcqvczKNN7ICJ1XgOQ0"/>
+<div class="absolute inset-0 bg-gradient-to-l from-transparent via-background/40 to-background"></div>
+</div>
+</div>
+<!-- Reading Status Card -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-8 flex flex-col items-center justify-center text-center">
+<div class="relative w-40 h-40 flex items-center justify-center mb-6">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="176" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-4xl font-extrabold text-white text-glow">60%</span>
+<span class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">COMPLETE</span>
+</div>
+</div>
+<h4 class="text-lg font-bold text-white mb-2">Reading Status</h4>
+<p class="text-on-surface-variant text-sm">6 of 10 reports finished.<br/>You're in the top 5% of readers.</p>
+</div>
+</div>
+<!-- Section Title -->
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold text-white">Latest Reports</h2>
+<div class="flex gap-2">
+<button class="bg-surface-container hover:bg-surface-bright px-4 py-2 rounded-full text-sm font-medium transition-colors">Filter</button>
+<button class="bg-surface-container hover:bg-surface-bright px-4 py-2 rounded-full text-sm font-medium transition-colors">Sort by Date</button>
+</div>
+</div>
+<!-- Reports List - Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Report 1 -->
+<div class="bg-surface-container-low p-6 rounded-2xl hover:bg-surface-container transition-all group cursor-pointer border border-transparent hover:border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-3 py-1 rounded-full font-bold">FINANCE</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 leading-snug">Global FinTech Disruption 2024</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">How emerging payment protocols are reshaping the consumer banking experience across SE Asia.</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<img alt="Collaborator" class="h-6 w-6 rounded-full border-2 border-background" data-alt="professional person portrait, corporate style, soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7XMvCMWe60eydHXS4KwbEAtFH02eHxlDCUwvs-Hpxhh5O5qj0zimBSnibHChSH3zdZE1wdBtgmSuSQ8vD76YFw8JBF7evwbXiMz4eI1CQnorzKaOgswAgfYPIq43oo9_MQqE6in4cyxD5EP76hF5pzgENPHZ8qS83OVInMZfa3md5BF192q_cx5Q3uNhWUHYqEmWCjA-mJ13lHZsA4URwki_16wgp1UxtNZEi0p3bIQF24rNYmoOnZ0WjTkZ8E07sb8-P_uARHPZq"/>
+<div class="h-6 w-6 rounded-full bg-primary-container text-[8px] flex items-center justify-center font-bold text-on-primary-container border-2 border-background">+2</div>
+</div>
+<span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        READ <span class="material-symbols-outlined text-sm">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Report 2 -->
+<div class="bg-surface-container-low p-6 rounded-2xl hover:bg-surface-container transition-all group cursor-pointer border border-transparent hover:border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-3 py-1 rounded-full font-bold">SECURITY</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 leading-snug">Quantum Cryptography Risks</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Preparing enterprise infrastructure for post-quantum security challenges and migration paths.</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<img alt="Collaborator" class="h-6 w-6 rounded-full border-2 border-background" data-alt="professional woman headshot, clean look, high resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBJ7OOwrxSErQ-QqGlHm5G9F8Gx0uJLecsZSK32VliU2Okh8oNRg0ik6C_WLiJPSvwXe1zQ_Q6MWfPBeP-rrv7VBkeBx3cglni2g-6X-axd1jI3y-EHyGAwgT5tX7trOb5kEYkMi6L6mdXxc5o9jxepXYd2eUv_TcwuRbz_1Ww9u-9JHs6otAmK3HzSmOIto87bWrr8U04R44e47ebSX9nIJgs0U_2_h5L0mn67wBwvGGamq_IxNESMifDNAoTzrIS3_h13-l0tpdP"/>
+</div>
+<span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        READ <span class="material-symbols-outlined text-sm">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Report 3 -->
+<div class="bg-surface-container-low p-6 rounded-2xl hover:bg-surface-container transition-all group cursor-pointer border border-transparent hover:border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-3 py-1 rounded-full font-bold">ENERGY</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 leading-snug">Grid Decarbonization Trends</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">The role of decentralized energy resources in stabilizing modern renewable power grids.</p>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="h-6 w-6 rounded-full bg-surface-bright flex items-center justify-center border-2 border-background"><span class="material-symbols-outlined text-[10px]">person</span></div>
+</div>
+<span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        READ <span class="material-symbols-outlined text-sm">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Report 4 -->
+<div class="bg-surface-container-low p-6 rounded-2xl hover:bg-surface-container transition-all group cursor-pointer border border-transparent hover:border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">neurology</span>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-3 py-1 rounded-full font-bold">TECH</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 leading-snug">Agentic AI Workflows</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Case studies on how autonomous agents are reducing operational overhead by 40%.</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant italic">Reading time: 12 min</span>
+<span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        READ <span class="material-symbols-outlined text-sm">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Report 5 -->
+<div class="bg-surface-container-low p-6 rounded-2xl hover:bg-surface-container transition-all group cursor-pointer border border-transparent hover:border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-3 py-1 rounded-full font-bold">ESG</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 leading-snug">Sustainable Logistics</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Exploring the shift toward zero-emission heavy-duty transport in global supply chains.</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant italic">Reading time: 8 min</span>
+<span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        READ <span class="material-symbols-outlined text-sm">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Report 6 -->
+<div class="bg-surface-container-low p-6 rounded-2xl hover:bg-surface-container transition-all group cursor-pointer border border-transparent hover:border-outline-variant/10">
+<div class="flex justify-between items-start mb-6">
+<div class="h-12 w-12 rounded-xl bg-red-500/10 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-2xl">biotech</span>
+</div>
+<span class="text-[10px] bg-surface-container-highest px-3 py-1 rounded-full font-bold">HEALTH</span>
+</div>
+<h3 class="text-lg font-bold text-white mb-2 leading-snug">Personalized Medicine v2</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">How genomic sequencing at scale is enabling tailored preventative therapies.</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] text-on-surface-variant italic">Reading time: 15 min</span>
+<span class="text-xs font-bold text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        READ <span class="material-symbols-outlined text-sm">chevron_right</span>
+</span>
+</div>
+</div>
+<!-- Additional Reports (Simulated for the 10 reports requested) -->
+<div class="bg-surface-container-low p-6 rounded-2xl opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<h3 class="text-lg font-bold text-white mb-2">Space Economy 2030</h3>
+<p class="text-xs text-on-surface-variant">Infrastructure and satellite services market projection...</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<h3 class="text-lg font-bold text-white mb-2">Semiconductor Roadmap</h3>
+<p class="text-xs text-on-surface-variant">Navigating the 2nm transition and foundry geopolitics...</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<h3 class="text-lg font-bold text-white mb-2">Web3 Resilience</h3>
+<p class="text-xs text-on-surface-variant">The maturity of decentralized finance after the crash...</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl opacity-70 hover:opacity-100 transition-all cursor-pointer">
+<h3 class="text-lg font-bold text-white mb-2">Urban Air Mobility</h3>
+<p class="text-xs text-on-surface-variant">Regulatory hurdles for VTOL operations in major cities...</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-background/80 backdrop-blur-xl px-6 py-4 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium">Reports</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium">Assets</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 h-14 w-14 bg-primary text-on-primary-container rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+</body></html>
