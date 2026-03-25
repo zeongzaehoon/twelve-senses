@@ -1,7 +1,7 @@
 # Design System: Minimalist Precision & Bold Editorial
 
 ## 1. Overview & Creative North Star: "The Architectural Monolith"
-This design system is a tribute to structural integrity and the power of negative space. Inspired by the high-end editorial clarity of Hyundai Card, we move away from the "bubble-wrap" UI of the modern web toward a "Monolithic" aesthetic. 
+This design system is a tribute to structural integrity and the power of negative space. Inspired by the high-end editorial clarity of Minimal, we move away from the "bubble-wrap" UI of the modern web toward a "Monolithic" aesthetic. 
 
 **The Creative North Star: The Architectural Monolith.**
 Our interface should feel like a premium printed journal or a slab of polished basalt. We reject the "default" look of the web—round buttons, soft shadows, and cluttered grids—in favor of razor-sharp 0px corners, extreme typographic contrast, and a strict, mathematical use of space. We don't just "show" information; we *curate* it through intentional asymmetry and a hierarchy that feels authoritative and permanent.
