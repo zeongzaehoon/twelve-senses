@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VOLUME 2026, ISSUE 13 | STRATEGIC REPORT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1a1c1c",
+                        "on-primary": "#e2e2e2",
+                        "tertiary-fixed": "#5e5e5e",
+                        "on-secondary": "#ffffff",
+                        "outline": "#777777",
+                        "secondary": "#5f5e5e",
+                        "surface-dim": "#dadada",
+                        "on-background": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#474747",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#464747",
+                        "primary-fixed-dim": "#474747",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed-dim": "#adabaa",
+                        "primary-fixed": "#5e5e5e",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-error-container": "#410002",
+                        "primary": "#000000",
+                        "secondary-container": "#d6d4d3",
+                        "primary-container": "#3b3b3b",
+                        "surface-tint": "#5e5e5e",
+                        "inverse-primary": "#c6c6c6",
+                        "on-tertiary-container": "#ffffff",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "tertiary-container": "#747474",
+                        "outline-variant": "#c6c6c6",
+                        "secondary-fixed": "#c8c6c5",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-container": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c3b3b",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary": "#3b3b3c",
+                        "background": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#e3e2e2",
+                        "on-primary-fixed-variant": "#e2e2e2",
+                        "on-tertiary": "#e3e2e2",
+                        "on-secondary-container": "#1b1c1c",
+                        "on-tertiary-fixed": "#ffffff",
+                        "surface-container": "#eeeeee",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary-fixed": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .reading-progress {
+            width: 35%;
+        }
+        ::selection {
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-8 h-20 bg-[#F9F9F9] dark:bg-[#1A1C1C] opacity-80 backdrop-blur-xl z-50">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-black dark:text-white tracking-tighter font-headline">VOLUME 2026, ISSUE 13</span>
+<nav class="hidden md:flex items-center gap-6 font-headline font-bold tracking-[-0.04em] uppercase">
+<a class="text-black dark:text-white border-b-2 border-black dark:border-white pb-1 hover:text-black dark:hover:text-white transition-colors duration-200" href="#">Editorial</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-black dark:hover:text-white transition-colors duration-200" href="#">Market Analysis</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-black dark:hover:text-white transition-colors duration-200" href="#">Portfolio</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<button class="p-2 scale-100 active:scale-95 transition-transform"><span class="material-symbols-outlined" data-icon="archive">archive</span></button>
+<button class="p-2 scale-100 active:scale-95 transition-transform"><span class="material-symbols-outlined" data-icon="share">share</span></button>
+</div>
+</div>
+<!-- Reading Progress Bar -->
+<div class="absolute bottom-0 left-0 h-[2px] bg-primary reading-progress transition-all duration-300"></div>
+</header>
+<!-- SideNavBar (Hidden on small, persistent on large) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col pt-24 pb-8 bg-[#EEEEEE] dark:bg-[#121212] w-64 hidden xl:flex">
+<div class="px-6 mb-10">
+<h2 class="text-lg font-bold text-black dark:text-white font-headline">STRATEGIC REPORT</h2>
+<p class="font-['Space_Grotesk'] uppercase text-[10px] tracking-[0.2rem] text-zinc-500">Premium Insights</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 bg-black dark:bg-white text-white dark:text-black font-bold px-6 py-4 transition-all duration-300 ease-in-out font-headline uppercase text-xs tracking-[0.1rem]" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                Editorial
+            </a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 px-6 py-4 hover:bg-[#E2E2E2] dark:hover:bg-[#1F1F1F] transition-all duration-300 ease-in-out font-headline uppercase text-xs tracking-[0.1rem]" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                Market Analysis
+            </a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 px-6 py-4 hover:bg-[#E2E2E2] dark:hover:bg-[#1F1F1F] transition-all duration-300 ease-in-out font-headline uppercase text-xs tracking-[0.1rem]" href="#">
+<span class="material-symbols-outlined" data-icon="pie_chart">pie_chart</span>
+                Portfolio
+            </a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 px-6 py-4 hover:bg-[#E2E2E2] dark:hover:bg-[#1F1F1F] transition-all duration-300 ease-in-out font-headline uppercase text-xs tracking-[0.1rem]" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                Risk Index
+            </a>
+<a class="flex items-center gap-3 text-zinc-600 dark:text-zinc-400 px-6 py-4 hover:bg-[#E2E2E2] dark:hover:bg-[#1F1F1F] transition-all duration-300 ease-in-out font-headline uppercase text-xs tracking-[0.1rem]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                Archive
+            </a>
+</nav>
+<div class="px-6 pt-6 mt-auto border-t border-zinc-300 dark:border-zinc-800">
+<button class="w-full bg-primary text-on-primary py-4 font-headline font-black text-xs tracking-widest scale-100 active:scale-95 transition-transform">
+                DOWNLOAD PDF
+            </button>
+<div class="mt-6 space-y-2">
+<a class="flex items-center gap-2 text-[10px] tracking-widest uppercase font-headline text-zinc-500 hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span> Settings
+                </a>
+<a class="flex items-center gap-2 text-[10px] tracking-widest uppercase font-headline text-zinc-500 hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span> Support
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="xl:ml-64 pt-20">
+<!-- Editorial Masthead -->
+<section class="bg-surface-dim pt-20 pb-16 px-8 md:px-20">
+<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+<div class="md:col-span-4">
+<span class="font-headline font-bold uppercase text-xs tracking-[0.3em] text-primary">Report 04 // Q1 2026</span>
+<div class="mt-8 space-y-2">
+<p class="font-headline text-sm font-bold uppercase tracking-widest">Metadata</p>
+<p class="text-xs font-medium text-zinc-600 uppercase tracking-tighter">Author: Julianne V. Hauer</p>
+<p class="text-xs font-medium text-zinc-600 uppercase tracking-tighter">Published: Oct 24, 2025</p>
+<p class="text-xs font-medium text-zinc-600 uppercase tracking-tighter">Reading Time: 12 min</p>
+</div>
+</div>
+<div class="md:col-span-8">
+<h1 class="font-headline font-black text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-[-0.05em] uppercase text-primary">
+                        The Great <br/>Revaluation
+                    </h1>
+<p class="mt-8 text-xl md:text-2xl font-light text-zinc-800 max-w-2xl leading-relaxed">
+                        An exploration of the architectural shifts in global capital markets and the emergence of the post-scarcity economic monolith.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Article Content -->
+<article class="max-w-6xl mx-auto px-8 md:px-20 py-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+<!-- Left Sidebar / Annotation Column -->
+<div class="md:col-span-4 sticky top-32 space-y-12 hidden md:block">
+<div class="bg-surface-container-low p-8 border-l-4 border-primary">
+<p class="font-headline font-black text-xs uppercase tracking-[0.2em] mb-4">Core Thesis</p>
+<p class="text-sm leading-relaxed text-zinc-700 italic">
+                            "The absence of volatility is not safety; it is the buildup of silent systemic pressure that eventually dictates the market's collapse."
+                        </p>
+</div>
+<div class="space-y-4">
+<p class="font-headline font-bold text-[10px] uppercase tracking-widest text-zinc-400">Related Data Sets</p>
+<ul class="space-y-4">
+<li class="group cursor-pointer">
+<div class="flex justify-between items-end border-b border-zinc-200 pb-2">
+<span class="text-xs font-bold uppercase tracking-tight group-hover:text-primary">Volatility Index</span>
+<span class="text-xs font-headline font-bold">14.2%</span>
+</div>
+</li>
+<li class="group cursor-pointer">
+<div class="flex justify-between items-end border-b border-zinc-200 pb-2">
+<span class="text-xs font-bold uppercase tracking-tight group-hover:text-primary">Yield Forecast</span>
+<span class="text-xs font-headline font-bold">+2.8</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Main Text Column -->
+<div class="md:col-span-8 space-y-12">
+<div class="space-y-6">
+<h2 class="font-headline font-black text-3xl uppercase tracking-tighter border-b-4 border-primary inline-block pb-2">01. The Void of Liquidity</h2>
+<p class="text-lg md:text-xl leading-[1.8] text-on-surface font-light">
+                            Traditional market mechanisms are failing to account for the velocity of digital asset migration. As we observe the transition from high-frequency trading models to long-tail architectural positions, a new vacuum has emerged. This is not a lack of interest, but a deliberate <span class="font-bold underline">intentional withdrawal</span> from the traditional theater of operations.
+                        </p>
+<p class="text-lg md:text-xl leading-[1.8] text-on-surface font-light">
+                            What we call "stability" in the current quarter is merely the result of massive institutional anchoring. Below the surface, the bedrock of valuation is shifting toward a more algorithmic, yet emotionally volatile, core.
+                        </p>
+</div>
+<div class="py-12">
+<blockquote class="relative pl-0 md:pl-12">
+<span class="absolute -top-12 -left-4 text-9xl font-black text-surface-container-highest opacity-50 font-headline leading-none select-none">“</span>
+<p class="font-headline font-black text-3xl md:text-5xl uppercase leading-[1.1] tracking-tight text-primary">
+                                Architecture is the ultimate expression of power in the financial domain. We are no longer building spreadsheets; we are building cathedrals of data.
+                            </p>
+<footer class="mt-6 font-headline font-bold text-xs tracking-widest uppercase text-zinc-500">— Chief Strategist, Volume 2026</footer>
+</blockquote>
+</div>
+<div class="space-y-6">
+<h2 class="font-headline font-black text-3xl uppercase tracking-tighter">02. Mathematical Permanence</h2>
+<div class="aspect-video w-full bg-surface-container overflow-hidden group">
+<img alt="Modern skyscraper architectural detail" class="w-full h-full object-cover grayscale brightness-90 group-hover:scale-105 transition-transform duration-700" data-alt="monolithic modern skyscraper facade with sharp geometric shadows and high contrast architectural lines in black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe8SzVGLBSZksu7W236fIea4ec6kK-tPRlE9MSInvHP7SoAP__00fUz4XczcJp4TkMRx0M6kwWe9Sz-YBWFJj2nLPzoK6-gFBdaTotQNHySrl-pO13R_jLfXVV_HgCEve8_fLvH3O_TyxIhXN9lIF90ry3sirWzLkvBK8clhe16yvij6kLmsOHf-vvBtJ0B6ywRJ0rd63VP055xCWjz6mrBf0ZiPtGvjC78DTcx-zcc-JOBq9BZqSxONFJ13c3cfUAKMKjXhGbUzB1"/>
+</div>
+<p class="text-lg md:text-xl leading-[1.8] text-on-surface font-light">
+                            The shift towards the "Monolithic" aesthetic in UI design mirrored the consolidation of power in the tech-finance sectors. Surfaces became flatter, edges sharper, and the "human" element was relegated to the margins of high-performance systems.
+                        </p>
+<!-- Mini Bento Grid for Data -->
+<div class="grid grid-cols-2 gap-4 mt-8">
+<div class="bg-primary text-on-primary p-8">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60">Absorption Rate</p>
+<h3 class="font-headline font-black text-5xl mt-2 tracking-tighter">92%</h3>
+<p class="text-xs mt-4 leading-tight opacity-80 uppercase tracking-tighter">Projected market saturation by Q4 2026 across major metropolitan hubs.</p>
+</div>
+<div class="bg-surface-container-highest p-8">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Risk Variance</p>
+<h3 class="font-headline font-black text-5xl mt-2 tracking-tighter text-primary">0.04</h3>
+<p class="text-xs mt-4 leading-tight text-zinc-600 uppercase tracking-tighter">The tightest margin of error recorded since the inception of the report series.</p>
+</div>
+</div>
+</div>
+<div class="space-y-6 pt-8">
+<p class="text-lg md:text-xl leading-[1.8] text-on-surface font-light">
+                            In conclusion, the architectural monolith is not just a design choice—it is a survival mechanism. By stripping away the ornamental and the redundant, we expose the structural truth of our current economic reality. The future belongs to those who can navigate the void with precision.
+                        </p>
+</div>
+</div>
+</div>
+</article>
+<!-- Bottom Navigation Section -->
+<footer class="border-t border-zinc-200 mt-20">
+<div class="max-w-6xl mx-auto grid grid-cols-2 h-48">
+<a class="group flex flex-col justify-center px-8 md:px-20 border-r border-zinc-200 hover:bg-surface-container-low transition-colors duration-300" href="#">
+<span class="flex items-center gap-2 font-headline font-bold text-[10px] tracking-widest text-zinc-400 uppercase mb-2">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span> Previous Report
+                    </span>
+<h4 class="font-headline font-black text-xl md:text-2xl uppercase tracking-tighter group-hover:translate-x-2 transition-transform duration-300">The Decentralized Bedrock</h4>
+</a>
+<a class="group flex flex-col justify-center items-end text-right px-8 md:px-20 hover:bg-surface-container-low transition-colors duration-300" href="#">
+<span class="flex items-center gap-2 font-headline font-bold text-[10px] tracking-widest text-zinc-400 uppercase mb-2">
+                        Next Report <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</span>
+<h4 class="font-headline font-black text-xl md:text-2xl uppercase tracking-tighter group-hover:-translate-x-2 transition-transform duration-300">Synthetic Scarcity</h4>
+</a>
+</div>
+<div class="bg-black text-white py-12 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col">
+<span class="text-xl font-black tracking-tighter font-headline">VOLUME 2026</span>
+<p class="text-[10px] tracking-[0.3em] uppercase opacity-50 mt-1">Global Strategic Intelligence</p>
+</div>
+<div class="flex gap-12 font-headline text-[10px] font-bold uppercase tracking-widest">
+<a class="hover:opacity-60 transition-opacity" href="#">Legal</a>
+<a class="hover:opacity-60 transition-opacity" href="#">Privacy</a>
+<a class="hover:opacity-60 transition-opacity" href="#">Contact</a>
+<a class="hover:opacity-60 transition-opacity" href="#">Archive</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Mobile Navigation (Bottom Bar) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-16 bg-white dark:bg-black flex justify-around items-center z-50 px-4 border-t-0 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+<button class="flex flex-col items-center justify-center p-2 text-black font-bold">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-[8px] uppercase tracking-widest mt-1">Read</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 text-zinc-400">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-[8px] uppercase tracking-widest mt-1">Data</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 text-zinc-400">
+<span class="material-symbols-outlined" data-icon="pie_chart">pie_chart</span>
+<span class="text-[8px] uppercase tracking-widest mt-1">Port</span>
+</button>
+<button class="flex flex-col items-center justify-center p-2 text-zinc-400">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-[8px] uppercase tracking-widest mt-1">Arch</span>
+</button>
+</nav>
+</body></html>
