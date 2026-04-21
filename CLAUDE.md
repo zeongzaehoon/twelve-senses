@@ -82,6 +82,41 @@
 
 ---
 
+## AI 작업 시스템
+
+### 규칙 파일 (`.claude/rules/`)
+모든 분석 작업에 자동 적용되는 규칙:
+- [공통규칙.md](.claude/rules/공통규칙.md) — 시작 전 확인사항, 데이터 수집·저장 규칙
+- [Notion저장규칙.md](.claude/rules/Notion저장규칙.md) — Notion 자동 저장 (페이지 ID: `3299f52b-c636-801c-bc4f-d656074382d4`)
+- [분석품질기준.md](.claude/rules/분석품질기준.md) — 보고서별 최소 품질 체크리스트
+
+### 스킬 파일 (`.claude/skills/`)
+분석 방법론 참조 라이브러리:
+| 스킬 | 설명 | 참조 방법론 |
+|------|------|-----------|
+| [환경분석.md](.claude/skills/환경분석.md) | 거시환경 분석 | PESTLE, 시나리오 플래닝 |
+| [시장분석.md](.claude/skills/시장분석.md) | 시장규모 산정 | TAM/SAM/SOM |
+| [고객경쟁사분석.md](.claude/skills/고객경쟁사분석.md) | 고객·경쟁 분석 | JTBD, Empathy Map, Porter |
+| [통합전략.md](.claude/skills/통합전략.md) | 전략 도출 | SWOT/TOWS, OKR, BSC, Blue Ocean |
+| [마케팅전략.md](.claude/skills/마케팅전략.md) | 성장 전략 | STP, AARRR, Growth Loop |
+| [브랜딩전략.md](.claude/skills/브랜딩전략.md) | 브랜드 정체성 | Golden Circle, Brand Pyramid, Archetypes |
+| [Notion저장.md](.claude/skills/Notion저장.md) | Notion 저장 방법 | — |
+
+방법론 레퍼런스: `.claude/skills/references/` (PESTLE, JTBD, SWOT-TOWS, TAM-SAM-SOM, OKR, BSC, Blue Ocean, STP, AARRR, Growth Loop, Golden Circle, Brand Pyramid, Brand Archetypes, Porter Five Forces, Empathy Map, Design Thinking, RICE-MoSCoW, Scenario Planning, **Notion-블록레퍼런스**)
+
+### 에이전트 (`/.claude/agents/`)
+복잡한 분석 위임 가능한 전문가 페르소나:
+| 에이전트 | 전문 영역 |
+|---------|---------|
+| [마케팅분석가](.claude/agents/마케팅분석가.md) | STP, AARRR, Growth Loop, 콘텐츠 전략 |
+| [브랜딩분석가](.claude/agents/브랜딩분석가.md) | Golden Circle, Brand Pyramid, Archetype |
+| [경영전략분석가](.claude/agents/경영전략분석가.md) | OKR, BSC, Blue Ocean, SWOT/TOWS |
+| [영업전략분석가](.claude/agents/영업전략분석가.md) | B2B 영업, 플랫폼 입점, 파트너십 |
+| [시장조사분석가](.claude/agents/시장조사분석가.md) | TAM/SAM/SOM, 경쟁사 모니터링, 트렌드 |
+| [제품기획자](.claude/agents/제품기획자.md) | RICE/MoSCoW, JTBD, 피처 우선순위 |
+
+---
+
 ## 주요 용어 정리
 
 | 용어 | 설명 |

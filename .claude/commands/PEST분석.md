@@ -43,3 +43,9 @@ CLAUDE.md의 Twelve Senses 프로젝트 컨텍스트를 읽고, WebSearch로 이
 3. 시나리오 플래닝 매트릭스
 4. 즉각 대응 필요 항목 (Action Items)
 5. SWOT 분석에 전달할 O(기회)/T(위협) 요약
+
+## 마지막 단계: Notion 저장
+로컬 저장 완료 후 Read 도구로 `.claude/skills/Notion저장.md`를 읽고, 해당 보고서 유형 리치 포맷 템플릿을 적용해 Notion에 저장:
+- Executive Summary (3줄)
+- 핵심 인사이트 Top 5
+- 이번 주 실행 과제 Top 3
