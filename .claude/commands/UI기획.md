@@ -42,3 +42,9 @@ Twelve Senses 앱의 핵심 사용자 여정을 매핑:
 3. Lean UX 실험 제안 (Top 3)
 4. 이번 주 UI 우선순위 작업 (RICE 점수 포함)
 5. 경쟁 앱 UX 벤치마킹 (WebSearch 기반)
+
+## 마지막 단계: Notion 저장
+로컬 저장 완료 후 Read 도구로 `.claude/skills/Notion저장.md`를 읽고, 해당 보고서 유형 리치 포맷 템플릿을 적용해 Notion에 저장:
+- Executive Summary (3줄)
+- 핵심 인사이트 Top 5
+- 이번 주 실행 과제 Top 3
